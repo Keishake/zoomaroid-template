@@ -29,7 +29,7 @@
             <?php edit_post_link('//edit'); ?>
           </div>
          </div>
-        <?php comments_popup_link('', '1 msg', '% msgs'); ?><?php edit_post_link(' //edit'); ?>
+        <?php comments_popup_link('', '1 msg', '% msgs'); ?>
       </div>
     </section>
     <?php endwhile; ?>
