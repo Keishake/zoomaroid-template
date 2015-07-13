@@ -42,7 +42,11 @@
         </form>
       </div>
       <div class="mdl-layout__header-row">
-        <h3 class="blog-title"><a href="<?php bloginfo('url'); ?>/"><?php bloginfo('name'); ?></a></h3>
+        <h2 class="blog-title"><a href="<?php bloginfo('url'); ?>/"><?php bloginfo('name'); ?></a></h2>
+        <div class="mdl-layout-spacer"></div>
+        <div class="blog-frog">
+            <img class="frog-gif" src="<?php bloginfo('template_url'); ?>/img/frog-game.gif" />
+        </div>
       </div>
       <div class="mdl-layout__header-row">
         <p><?php bloginfo('description'); ?></p>
