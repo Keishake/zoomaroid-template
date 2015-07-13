@@ -14,7 +14,7 @@
     </div>
     <?php if (have_posts()) : ?><?php while (have_posts()) : the_post(); ?>
     <section class="section--center mdl-shadow--2dp blog-post" id="post-<?php the_ID(); ?>">
-      <div class="mdl-card__title mdl-color--accent">
+      <div class="mdl-card__title mdl-color--primary-dark">
         <h4 class="mdl-card__title-text blog-entry-title">
           <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
         </h4>

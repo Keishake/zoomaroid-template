@@ -21,12 +21,20 @@ code{
   background-color:#eee;
 }
 
+.mdl-blog .blog-content {
+  background-color: #f5f5f5;
+}
+
+.mdl-blog .blog-content section {
+  background-color: #fff;
+}
+
 .mdl-blog .blog-title a{
-  color: #fff !important;
+  color: #fff;
 }
 
 .mdl-blog .blog-entry-title a{
-  color: #000 !important;
+  color: #fff;
 }
 
 .mdl-blog .mdl-layout__header-row {
