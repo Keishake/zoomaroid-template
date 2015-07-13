@@ -7,6 +7,8 @@
   <link rel="shorcut icon" type="image/x-ico" href="<?php bloginfo('template_url'); ?>/favicon.ico" />
   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.orange-green.min.css" /> 
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/jquery-1.11.3.min.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
   <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
