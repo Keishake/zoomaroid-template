@@ -34,56 +34,58 @@
 <?php if ('open' == $post->comment_status) : ?>
 
 <div id="respond">
+  <h3><?php comment_form_title( 'Leave a Reply', 'Leave a Reply to %s' ); ?></h3>
+  <div class="cancel-comment-reply">
+    <small><?php cancel_comment_reply_link(); ?></small>
+  </div>
 
-<h3><?php comment_form_title( 'Leave a Reply', 'Leave a Reply to %s' ); ?></h3>
+  <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
 
-<div class="cancel-comment-reply">
-  <small><?php cancel_comment_reply_link(); ?></small>
-</div>
+    <p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged in</a> to post a comment.</p>
 
-<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-<p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged in</a> to post a comment.</p>
-<?php else : ?>
+  <?php else : ?>
 
-<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
+  <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 
-<?php if ( $user_ID ) : ?>
+    <?php if ( $user_ID ) : ?>
+      <p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Log out &raquo;</a></p>
+    <?php else : ?>
+      <?php if ( $comment_author != "" ) : ?>
 
-<p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Log out &raquo;</a></p>
-
-<?php else : ?>
-
-<?php if ( $comment_author != "" ) : ?>
-<script type="text/javascript">function setStyleDisplay(id, status){document.getElementById(id).style.display = status;}</script>
-<?php printf(__('Hello, <strong>%s</strong>'), $comment_author) ?>
-
-<span id="show_author_info"><a href="javascript:setStyleDisplay('author_info','');setStyleDisplay('show_author_info','none');setStyleDisplay('hide_author_info','');"><?php _e('Change &raquo;'); ?></a></span>
- 
-<span id="hide_author_info"><a href="javascript:setStyleDisplay('author_info','none');setStyleDisplay('show_author_info','');setStyleDisplay('hide_author_info','none');"><?php _e('Cancel &raquo;'); ?></a></span>
-<?php endif; ?>
-
-<div style="float:left;">
-<div id="author_info">
-<p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="35" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />&nbsp;Name
-<p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="35" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />&nbsp;Mail
-<p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="35" tabindex="3" />&nbsp;Home
-</div>
-
-<font color=#880000>[Name and Mail is required. Mail won't be published.]</font><br />
-</div>
-<?php if ( $comment_author != "" ) : ?>
-<script type="text/javascript">setStyleDisplay('hide_author_info','none');setStyleDisplay('author_info','none');</script>
-<?php endif; ?>
-<?php endif; ?>
-
-<div style="float:left;margin-left:30px;"><textarea name="comment" id="comment" cols="100" rows="10" tabindex="4"></textarea>
-<br />
-<input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
-<?php comment_id_fields(); ?>
-</div>
-<?php do_action('comment_form', $post->ID); ?>
-
-</form>
+        <script type="text/javascript">function setStyleDisplay(id, status){document.getElementById(id).style.display = status;}</script>
+        <?php printf(__('Hello, <strong>%s</strong>'), $comment_author) ?>
+        <span id="show_author_info"><a href="javascript:setStyleDisplay('author_info','');setStyleDisplay('show_author_info','none');setStyleDisplay('hide_author_info','');"><?php _e('Change &raquo;'); ?></a></span>
+        <span id="hide_author_info"><a href="javascript:setStyleDisplay('author_info','none');setStyleDisplay('show_author_info','');setStyleDisplay('hide_author_info','none');"><?php _e('Cancel &raquo;'); ?></a></span>
+        <br />
+      <?php endif; ?>
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="35" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
+          <label class="mdl-textfield__label" for="author">Name (required)</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="35" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+          <label class="mdl-textfield__label" for="email">Mail  (required but not published)</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="35" tabindex="3" />
+          <label class="mdl-textfield__label" for="url">Site URL</label>
+        </div>
+        <br/>
+      <?php if ( $comment_author != "" ) : ?>
+        <script type="text/javascript">setStyleDisplay('hide_author_info','none');setStyleDisplay('author_info','none');</script>
+      <?php endif; ?>
+    <?php endif; ?>
+    <div class="mdl-textfield mdl-js-textfield">
+      <textarea class="mdl-textfield__input" name="comment" id="comment" cols="100" rows="3" tabindex="4"></textarea>
+      <label class="mdl-textfield__label" for="comment">Comment here..</label>
+    </div>
+    <br />
+    <button name="submit" type="submit" id="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+      <i class="material-icons">check</i>
+    </button>
+    <?php comment_id_fields(); ?>
+    <?php do_action('comment_form', $post->ID); ?>
+  </form>
 <br clear="all" />
 <?php endif; // If registration required and not logged in ?>
 </div>
