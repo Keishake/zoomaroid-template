@@ -27,6 +27,10 @@ code{
  * Posts
  */
 
+.mdl-blog .mdl-layout__content {
+  -webkit-overflow-scrolling: touch;
+}
+
 .mdl-blog .frog-gif{
   width: 60px;
   height: 60px;

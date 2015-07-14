@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-<main id="main" class="mdl-layout__content">
-  <div class="blog-content mdl-js-layout">
+<main class="mdl-layout__content">
+  <div class="blog-content">
     <?php if (have_posts()) : ?><?php while (have_posts()) : the_post(); ?>
     <section class="section--center mdl-shadow--2dp" id="post-<?php the_ID(); ?>">
       <div class="mdl-card__title mdl-color--primary-dark">
@@ -48,3 +48,4 @@
   </div>
   <?php get_footer(); ?>
 </main>
+

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-<main id="main" class="mdl-layout__content">
-  <div class="blog-content mdl-js-layout">
+<main class="mdl-layout__content">
+  <div class="blog-content">
     <div class="ads mdl-layout--large-screen-only">
       <!-- shakezoomer.com -->
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

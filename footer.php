@@ -6,3 +6,4 @@
   </div>
   <br clear="all" />
 </footer>
+<script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.js"></script>
