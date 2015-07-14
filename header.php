@@ -4,11 +4,10 @@
   <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
   <meta name="keywords" content="<?php echo $metakeywords; ?>" />
   <meta name="description" content="<?php bloginfo('description'); ?>" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shorcut icon" type="image/x-ico" href="<?php bloginfo('template_url'); ?>/favicon.ico" />
   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.orange-green.min.css" /> 
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.js"></script>
-  <script src="<?php bloginfo('template_url'); ?>/js/jquery-1.11.3.min.js"></script>
-  <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
   <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
@@ -43,14 +42,14 @@
           </div>
         </form>
       </div>
-      <div class="mdl-layout__header-row">
-        <h2 class="blog-title"><a href="<?php bloginfo('url'); ?>/"><?php bloginfo('name'); ?></a></h2>
+      <div class="mdl-layout__header-row blog-title">
+        <h2><a href="<?php bloginfo('url'); ?>/"><?php bloginfo('name'); ?></a></h2>
         <div class="mdl-layout-spacer"></div>
         <div class="blog-frog">
             <img class="frog-gif" src="<?php bloginfo('template_url'); ?>/img/frog-game.gif" />
         </div>
       </div>
-      <div class="mdl-layout__header-row">
+      <div class="mdl-layout__header-row mdl-layout--large-screen-only">
         <p><?php bloginfo('description'); ?></p>
       </div>
       

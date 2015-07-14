@@ -21,9 +21,20 @@ code{
   background-color:#eee;
 }
 
+
+
+/*
+ * Posts
+ */
+
 .mdl-blog .frog-gif{
   width: 60px;
   height: 60px;
+}
+
+.mdl-blog .frog-gif.is-small-screen{
+  width: 30px;
+  height: 30px;
 }
 
 .mdl-blog .blog-content {
@@ -42,9 +53,22 @@ code{
   color: #fff;
 }
 
+.mdl-blog .is-small-screen .blog-title h2{
+  font-size: 20px;
+}
+.mdl-blog .is-small-screen .blog-frog img{
+  width: 40px;
+  height: 40px;
+}
+
 .mdl-blog .mdl-layout__header-row {
   padding-left: 40px;
   height: 80px;
+}
+
+.mdl-blog .is-small-screen .mdl-layout__header-row {
+  padding-left: 40px;
+  height: 60px;
 }
 
 .mdl-blog .nav {
@@ -57,7 +81,7 @@ code{
 .mdl-blog .search-form{
   padding-right: 30px;
 }
-.mdl-blog .blog-content{
+.mdl-blog .blog-content:not(.is-small-screen) {
   padding-top: 30px;
 }
 
@@ -321,3 +345,27 @@ code{
 .mdl-blog .mdl-menu__container {
   z-index: 99;
 }
+
+/*
+ * about
+ */
+.blog-card-image.mdl-card {
+  width: 256px;
+  height: 256px;
+}
+
+.blog-card-image.image-tenho {
+  background: url('http://shakezoomer.com/wp-content/uploads/2011/09/1024_new-300x300.png') center / cover;
+}
+.blog-card-image.image-janken {
+  background: url('http://shakezoomer.com/wp-content/uploads/2011/09/1024-300x300.png') center / cover;
+}
+.blog-card-image > .mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.blog-card-image__filename {
+  color: #fff;
+}
+

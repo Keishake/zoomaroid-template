@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <main id="main" class="mdl-layout__content">
-  <div class="blog-content">
-    <div class="ads">
+  <div class="blog-content mdl-js-layout">
+    <div class="ads mdl-layout--large-screen-only">
       <!-- shakezoomer.com -->
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <ins class="adsbygoogle"
@@ -36,6 +36,19 @@
         <?php comments_template(); ?>
       </div>
     </section>
+    <div class="ads-responsive">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- shakezoomer.comレスポンシブ -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-5887690717200366"
+           data-ad-slot="6853833735"
+           data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
   </div>
+  
   <?php get_footer(); ?>
 </main>
