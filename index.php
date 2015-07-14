@@ -8,7 +8,7 @@
           <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
         </h4>
       </div>
-      <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+      <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
         <div class="mdl-card__supporting-text">
           
           <?php $temp_arr_content = explode(" ",mb_substr(strip_tags(get_the_content()),0,290));

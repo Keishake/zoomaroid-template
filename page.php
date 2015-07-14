@@ -19,7 +19,7 @@
           <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
         </h4>
       </div>
-      <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+      <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
         <div class="mdl-card__supporting-text">
           <div class="blog-meta mdl-color-text--grey-700">
             Date: <?php the_time('Y/n/j') ?>
@@ -32,7 +32,7 @@
         <?php endwhile; ?>
         <?php endif; ?>
       </div>
-      <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments">
+      <div class="mdl-color-text--primary-contrast comments">
         <?php comments_template(); ?>
       </div>
     </section>

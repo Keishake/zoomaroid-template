@@ -199,6 +199,7 @@ code{
 
 .mdl-blog .mdl-layout__content .comments{
   background-color: #EEE;
+  padding: 16px;
 }
 
 .mdl-blog .ads {
