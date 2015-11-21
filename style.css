@@ -351,6 +351,10 @@ code{
   z-index: 99;
 }
 
+.mdl-blog section .img {
+    max-width: 700px;
+}
+
 /*
  * about
  */
