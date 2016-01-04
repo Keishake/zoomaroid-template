@@ -15,6 +15,7 @@ html, body {
 
 a {
   text-decoration:none;
+  color: #00BCD4;
 }
 
 code{
@@ -377,4 +378,3 @@ code{
 .blog-card-image__filename {
   color: #fff;
 }
-
